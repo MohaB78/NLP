@@ -95,6 +95,11 @@ if st.button("Prédire le Sentiment"):
     prediction = svm_model.predict(commentaire_tfidf)
 
     # Afficher le résultat
-    st.write(f"Sentiment prédit : {prediction[0]}")
+    if(prediction[0]==2):
+        st.write("Sentiment prédit : Positif")
+    elif(prediction[0]==1):
+        st.write("Sentiment prédit : Moyen")
+    else:
+        st.write("Sentiment prédit : Négatif")
     
 
